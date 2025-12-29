@@ -26,8 +26,8 @@ export class NiceMail {
 
   public getMail = () => generateMail();
 
-  public getInbox = async (mail: string): Promise<Inbox> =>
-    await this.__basicRequest<Inbox>(`/mailbox/${mail}`);
+  public getInbox = async (mail: string): Promise<Inbox[]> =>
+    await this.__basicRequest<Inbox[]>(`/mailbox/${mail}`);
 
   public getMessage = async (mail: string, messageId: string) =>
     await this.__basicRequest<Message>(`/mailbox/${mail}/${messageId}`);
