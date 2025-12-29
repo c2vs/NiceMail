@@ -1,4 +1,5 @@
 import { randomFillSync } from 'crypto';
+import { DOMAINS } from '../constants';
 
 const generateRequestId = (): string => {
   const t = new Uint8Array(16);
@@ -15,3 +16,7 @@ export const buildHeaders = () => {
 
 export const extractJWT = (text: string): string =>
   text.match(/eyJ[a-zA-Z0-9_-]+\.[a-zA-Z0-9_-]+\.[a-zA-Z0-9_-]+/)![0];
+
+export const generateMail = (): string => {
+  return `usermjr61${Math.random().toString(36).substring(2, 9)}@${DOMAINS[Math.floor(Math.random() * DOMAINS.length)]}`;
+};

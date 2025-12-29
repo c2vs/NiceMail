@@ -1,7 +1,7 @@
 import { request } from 'undici';
 
 import { API_URL, SITE_URL } from './constants';
-import { buildHeaders, extractJWT } from './utils/helpers';
+import { buildHeaders, extractJWT, generateMail } from './utils/helpers';
 import { Inbox, Message } from './schemas/models';
 
 export class NiceMail {
@@ -23,6 +23,8 @@ export class NiceMail {
     const { body } = await request(SITE_URL);
     this.__token = extractJWT(await body.text());
   };
+
+  public getMail = () => generateMail();
 
   public getInbox = async (mail: string): Promise<Inbox> =>
     await this.__basicRequest<Inbox>(`/mailbox/${mail}`);
