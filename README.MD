@@ -1,24 +1,26 @@
-# NiceMail
-Simple API Wrapper of Nicemail.cc for pentesting, accounts making and testing. Doesn't have limitations, only your needs.
+# MailPorary
+
+Simple API Wrapper of https://mailporary.com/ru for pentesting, accounts making and testing. Doesn't have limitations, only your needs.
 
 ### Installation
-```bash
-npm i nicemail-ts
-```
 
+```bash
+npm i mailporary
+```
 
 ### Examples
 
 ```typescript
-import { NiceMail } from 'nicemail-ts';
+import { MailPorary } from 'mailporary';
 
 (async () => {
-  const nicemail = new NiceMail();
-  const mail = nicemail.getMail();
-  const messages = await nicemail.getInbox(mail);
+  const mailporary = new MailPorary();
+  await mailporary.authorize();
+  const mail = mailporary.getMail();
+  const messages = await mailporary.getInbox(mail);
 
   if (messages.length) {
-    const message = await nicemail.getMessage(mail, messages[0].id);
+    const message = await mailporary.getMessage(mail, messages[0].id);
     console.log(message.body.text);
   }
 })();
