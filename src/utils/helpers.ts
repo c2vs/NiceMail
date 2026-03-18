@@ -18,5 +18,5 @@ export const extractJWT = (text: string): string =>
   text.match(/eyJ[a-zA-Z0-9_-]+\.[a-zA-Z0-9_-]+\.[a-zA-Z0-9_-]+/)![0];
 
 export const generateMail = (): string => {
-  return `usermjr61${Math.random().toString(36).substring(2, 9)}@${DOMAINS[Math.floor(Math.random() * DOMAINS.length)]}`;
+  return `${Math.random().toString(36).substring(2, 12)}@${DOMAINS[Math.floor(Math.random() * DOMAINS.length)]}`;
 };

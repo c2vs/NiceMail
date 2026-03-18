@@ -1,10 +1,10 @@
-import { request } from 'undici';
+import { fetch, request } from 'undici';
 
 import { API_URL, SITE_URL } from './constants';
 import { buildHeaders, extractJWT, generateMail } from './utils/helpers';
 import { Inbox, Message } from './schemas/models';
 
-export class NiceMail {
+export class MailPorary {
   private __token?: string;
 
   private __basicRequest = async <T>(endpoint: string): Promise<T> => {
@@ -20,8 +20,8 @@ export class NiceMail {
   };
 
   public authorize = async () => {
-    const { body } = await request(SITE_URL);
-    this.__token = extractJWT(await body.text());
+    const response = await fetch(SITE_URL);
+    this.__token = extractJWT(await response.text());
   };
 
   public getMail = () => generateMail();

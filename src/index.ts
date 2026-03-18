@@ -1,2 +1,2 @@
-export { NiceMail } from './nicemail';
+export { MailPorary } from './mailporary';
 export { Inbox, Message } from './schemas/models';

@@ -1,5 +1,5 @@
 {
-  "name": "nicemail-ts",
+  "name": "mailporary",
   "version": "1.1.2",
   "private": false,
   "main": "dist/index.js",
@@ -7,9 +7,9 @@
     "README.MD",
     "dist"
   ],
-  "description": "API Wrapper on TypeScript for temporary mail service - NiceMail",
+  "description": "API Wrapper on TypeScript for temporary mail service - MailPorary",
   "keywords": [
-    "nicemail",
+    "mailporary",
     "temp-mail",
     "tempmail",
     "temporary",
@@ -22,13 +22,13 @@
     "cybersecurity",
     "infosecurity"
   ],
-  "homepage": "https://github.com/thatcelt/NiceMail#readme",
+  "homepage": "https://github.com/thatcelt/MailPorary#readme",
   "bugs": {
-    "url": "https://github.com/thatcelt/NiceMail/issues"
+    "url": "https://github.com/thatcelt/MailPorary/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/thatcelt/NiceMail.git"
+    "url": "git+https://github.com/thatcelt/MailPorary.git"
   },
   "license": "MIT",
   "author": "celt_is_god",
@@ -40,6 +40,8 @@
     "typescript": "^5.2.2"
   },
   "dependencies": {
+    "@types/node": "^25.5.0",
+    "crypto": "^1.0.1",
     "undici": "^7.16.0"
   }
 }

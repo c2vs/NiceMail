@@ -1,5 +1,5 @@
-export const SITE_URL = 'https://nicemail.cc/ru';
-export const API_URL = 'https://web.nicemail.cc/api/v1';
+export const SITE_URL = 'https://mailporary.com/ru';
+export const API_URL = 'https://web.mailporary.com/api/v1';
 
 export const DOMAINS = [
   'oeralb.com',
